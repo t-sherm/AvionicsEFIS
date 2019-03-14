@@ -107,18 +107,21 @@ def arm(): #This is the arming procedure of an ESC
 def stop(): #This will stop every action your Pi is performing for ESC ofcourse.
     pi.set_servo_pulsewidth(ESC, 0)
     pi.stop()
-
-#This is the start of the program actually, to start the function it needs to be initialized before calling... stupid python.    
-inp = raw_input()
-if inp == "manual":
-    manual_drive()
-elif inp == "calibrate":
-    calibrate()
-elif inp == "arm":
-    arm()
-elif inp == "control":
-    control()
-elif inp == "stop":
-    stop()
-else :
-    print "Thank You for not following the things I'm saying... now you gotta restart the program STUPID!!"
+	
+	
+stop = 0
+#This is the start of the program actually, to start the function it needs to be initialized before calling... stupid python.  
+while stop != 1
+    inp = raw_input()
+    if inp == "manual":
+        manual_drive()
+    elif inp == "calibrate":
+        calibrate()
+    elif inp == "arm":
+        arm()
+    elif inp == "control":
+        control()
+    elif inp == "stop":
+        stop()
+    else :
+        print "Invalid Input"
