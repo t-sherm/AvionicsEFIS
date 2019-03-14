@@ -111,7 +111,7 @@ def stop(): #This will stop every action your Pi is performing for ESC ofcourse.
 	
 stop = 0
 #This is the start of the program actually, to start the function it needs to be initialized before calling... stupid python.  
-while stop != 1
+while stop != 1:
     inp = raw_input()
     if inp == "manual":
         manual_drive()
@@ -123,5 +123,6 @@ while stop != 1
         control()
     elif inp == "stop":
         stop()
+	stop = 1
     else :
         print "Invalid Input"
